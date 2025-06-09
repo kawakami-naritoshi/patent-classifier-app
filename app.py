@@ -4,8 +4,8 @@ import google.generativeai as genai
 import io # Excelファイルデータをメモリ上で扱うために必要
 
 # --- アプリのタイトルと説明 ---
-st.set_page_config(page_title="特許文書分類作成アプリ", layout="wide") # タイトル変更
-st.title("特許文書分類作成アプリ") # タイトル変更
+st.set_page_config(page_title="課題分類・解決手段分類生成アプリ", layout="wide") # タイトル変更
+st.title("課題分類・解決手段分類生成アプリ") # タイトル変更
 
 # --- 機能紹介セクション ---
 st.success(
@@ -54,7 +54,6 @@ def process_patent_documents(api_key_input, file_data, num_classes, custom_reque
         # API キーを設定
         genai.configure(api_key=api_key_input)
         # モデルを選択 (ユーザー指定のモデル名を使用)
-        #model_name = 'gemini-2.5-flash-preview-04-17'
         model_name = 'gemini-2.0-flash'
         model = genai.GenerativeModel(model_name)
 
@@ -115,13 +114,13 @@ def process_patent_documents(api_key_input, file_data, num_classes, custom_reque
 
             Notes:
             - 各{classification_type}分類のタイトル（カテゴリ名）は、与えられた文章の内容を正確かつ端的に反映するようにしてください。
-            - 説明文は具体的であり、{classification_type}内容を読みやすく伝えるように工夫してください。
+            - 説明文は具体的であり、{classification_type}の内容を読みやすく伝えるように工夫してください。
             - {classification_type}分類が互いに重複しないように注意し、幅広い視点から分類を行ってください。
             - 出力形式は、各分類のタイトルとその説明を明確に区別できるようにしてください。例えば、以下のような形式です。
-            [1.分類タイトル]
+            [分類タイトル]
             説明文...
 
-            [2.分類タイトル]
+            [分類タイトル]
             説明文...
 
             以下が対象の文章です:
@@ -198,4 +197,4 @@ else:
 st.sidebar.markdown("---")
 st.sidebar.caption("Powered by Google Gemini")
 st.sidebar.caption(f"Using model: gemini-2.0-flash")
-st.sidebar.caption("KawakamiⒸ2025")
+st.sidebar.caption("Ⓒ2025")
