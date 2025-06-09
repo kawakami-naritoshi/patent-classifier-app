@@ -196,4 +196,4 @@ else:
 st.sidebar.markdown("---")
 st.sidebar.caption("Powered by Google Gemini")
 st.sidebar.caption(f"Using model: gemini-2.0-flash")
-st.sidebar.caption("Ⓒ2025")
+st.sidebar.caption("KawakamiⒸ2025")
